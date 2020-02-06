@@ -40,17 +40,37 @@
       <constructor-arg value="UP"></constructor-arg>  
        <constructor-arg value="India"></constructor-arg>  
      </bean>
+     
+		  <bean id="ans1" class="com.springioc.demo.entity.Answer">  
+		<constructor-arg value="1"></constructor-arg>  
+		<constructor-arg value="Java is a programming language"></constructor-arg>  
+		<constructor-arg value="John"></constructor-arg>  
+		</bean>  
+		  
+		<bean id="ans2" class="com.springioc.demo.entity.Answer">  
+		<constructor-arg value="2"></constructor-arg>  
+		<constructor-arg value="Java is a Platform"></constructor-arg>  
+		<constructor-arg value="Ravi"></constructor-arg>  
+		</bean>  
+     
+     
       <bean id="question1" class="com.springioc.demo.entity.Question">  
-<constructor-arg value="111"></constructor-arg>  
-<constructor-arg value="What is java?"></constructor-arg>  
-<constructor-arg>  
-<list>  
-<value>Java is a programming language</value>  
-<value>Java is a Platform</value>  
-<value>Java is an Island of Indonasia</value>  
-</list>  
-</constructor-arg>  
-</bean>  
+        <constructor-arg  value="111"></constructor-arg>  
+        <constructor-arg  value="What is java?"></constructor-arg>  
+        <constructor-arg  name="answers">  
+        <list>  
+          <value>Java is a programming language</value>  
+           <value>Java is a Platform</value>  
+           <value>Java is an Island of Indonasia</value>  
+        </list>  
+     </constructor-arg>  
+     <constructor-arg name="otheranswers">
+     <list>
+     <ref bean="ans1"/>
+     <ref bean="ans2"/>
+     </list>
+      </constructor-arg>
+    </bean>  
          
 
 </beans>
