@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="empCons1" class="com.springioc.demo.entity.Employee">  
+     <constructor-arg value="10" type="int"></constructor-arg>  
+    </bean>
+    
+    <bean id="empCons2" class="com.springioc.demo.entity.Employee">  
+     <constructor-arg value="Empoyee name is Ravi" type="String"></constructor-arg>  
+    </bean>  
+    
+     <bean id="empCons3" class="com.springioc.demo.entity.Employee">  
+     <constructor-arg value="25" type="int"></constructor-arg>  
+     <constructor-arg value="Empoyee name is Gopal" type="String"></constructor-arg>  
+    </bean>
+    
+    <bean id="empCons4" class="com.springioc.demo.entity.Employee">  
+     <constructor-arg value="2" type="int"></constructor-arg>  
+     <constructor-arg value="Empoyee name is Rakesh" type="String"></constructor-arg>  
+     <constructor-arg>
+     <ref bean="city1"/>
+     </constructor-arg>
+    </bean>
+    
+     <bean id="person1" class="com.springioc.demo.entity.Person">  
+     <constructor-arg value="Kartik" type="String"></constructor-arg>  
+     <constructor-arg value="Mudigonda" type="String"></constructor-arg>  
+    </bean>  
+      
+       <bean id="person2" class="com.springioc.demo.entity.Person">  
+     <constructor-arg value="Chennu" index="1" type="String"></constructor-arg>  
+     <constructor-arg value="Phani" index="0" type="String"></constructor-arg>  
+    </bean>  
+      
+     <bean id="city1" class="com.springioc.demo.entity.Address">  
+     <constructor-arg value="hyderbad"></constructor-arg>  
+      <constructor-arg value="UP"></constructor-arg>  
+       <constructor-arg value="India"></constructor-arg>  
+     </bean>
+      <bean id="question1" class="com.springioc.demo.entity.Question">  
+<constructor-arg value="111"></constructor-arg>  
+<constructor-arg value="What is java?"></constructor-arg>  
+<constructor-arg>  
+<list>  
+<value>Java is a programming language</value>  
+<value>Java is a Platform</value>  
+<value>Java is an Island of Indonasia</value>  
+</list>  
+</constructor-arg>  
+</bean>  
+         
+
+</beans>
