@@ -18,7 +18,7 @@ import com.springioc.demo.mvc.entity.Product;
 @Transactional
 public class ProductService {
 	public static final Map<Long,Product> PRODUCTS = new HashMap<>();
-	public final Long id=Long.valueOf(0);
+	public static long id=0l;
     
      
     public List<Product> listAll() {
@@ -28,7 +28,9 @@ public class ProductService {
      
     public void save(Product product) {
         //repo.save(product);
-    	PRODUCTS.put(id.longValue()+1, product);
+    	id = id+1;
+    	product.setId(id);
+		PRODUCTS.put(Long.valueOf(id), product);
     }
      
     public Product get(long id) {
@@ -37,6 +39,12 @@ public class ProductService {
     return	PRODUCTS.get(id);
     }
      
+    
+ public void update(Product product) {
+    	
+        //return repo.findById(id).get();
+	 PRODUCTS.put(product.getId(), product);
+    }
     public void delete(long id) {
        // repo.deleteById(id);
     	PRODUCTS.remove(id);
